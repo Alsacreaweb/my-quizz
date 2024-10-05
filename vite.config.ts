@@ -4,8 +4,10 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/my-quizz/',
   plugins: [react(), VitePWA({
     registerType: 'prompt',
+    includeAssets: ['favicon.svg', 'favicon.ico'],
     injectRegister: false,
 
     pwaAssets: {
@@ -24,6 +26,7 @@ export default defineConfig({
       globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
       cleanupOutdatedCaches: true,
       clientsClaim: true,
+      navigateFallback: '/my-quizz/index.html',
     },
 
     devOptions: {
@@ -33,4 +36,10 @@ export default defineConfig({
       type: 'module',
     },
   })],
+  server: {
+    open: true
+  },
+  build: {
+    outDir: 'build'
+  }
 })

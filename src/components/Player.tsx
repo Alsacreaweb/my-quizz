@@ -63,7 +63,7 @@ export default function Player({ player, categories, difficulties, updatePlayerN
                             onChange={(e) => handleCategoryChange(e, category)}
                             className="bg-gray-300 p-2 rounded"
                         />
-                        <span className="text-gray-300">{categoryFormatting(category)}</span>
+                        <span className="text-gray-300 text-left">{categoryFormatting(category)}</span>
                     </label>
                 ))}
             </div>
